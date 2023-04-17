@@ -147,37 +147,37 @@ Rewards for sponsored projects are in addition to and separate from the existing
 
 ### Tier 2 Projects
 
-- Build an arbitrage bot or smart contract that utilizes ShadeSwap's liquidity pools to execute staking derivative arbitrage using Stride's derivatives and IBC. You would purchase staking derivatives at a discount on ShadeSwap, transfer them from Secret Network to Stride using IBC, and trigger an unbond to capture the arbitrage. This project is simple and the skills you learn can be applied to any other staking derivative arbitrage opportunity on any other network. 
-    Milestone 1: Build a bot that executes the arbitrage described above. +125 SHD
-    Milestone 2: Build a bot that executes the arbitrage for all available staking derivatives on ShadeSwap, and also utilizes the ShadeSwap router to capture arbitrage on not-CL pools. +50 SHD
+- Build an arbitrage bot or smart contract that utilizes ShadeSwap's liquidity pools to execute staking derivative arbitrage using Stride's derivatives and IBC. You would purchase staking derivatives at a discount on ShadeSwap, transfer them from Secret Network to Stride using IBC, and trigger an unbond to capture the arbitrage. This project is simple and the skills you learn can be applied to any other staking derivative arbitrage opportunity on any other network.   
+    Milestone 1: Build a bot that executes the arbitrage described above. +125 SHD  
+    Milestone 2: Build a bot that executes the arbitrage for all available staking derivatives on ShadeSwap, and also utilizes the ShadeSwap router to capture arbitrage on not-CL pools. +50 SHD  
 
-- Build an arbitrage bot or smart contract that utilizes ShadeSwap's liquidity pools to execute staking derivative arbitrage using Shade Protocol's stkd-SCRT. You would purchase staking derivatives at a discount on ShadeSwap and trigger an unbond on stkd-SCRT to capture the arbitrage. This project is even simpler because it does not require IBC. 
-    Milestone 1: Build a bot that executes the arbitrage described above. +125 SHD
+- Build an arbitrage bot or smart contract that utilizes ShadeSwap's liquidity pools to execute staking derivative arbitrage using Shade Protocol's stkd-SCRT. You would purchase staking derivatives at a discount on ShadeSwap and trigger an unbond on stkd-SCRT to capture the arbitrage. This project is even simpler because it does not require IBC.   
+    Milestone 1: Build a bot that executes the arbitrage described above. +125 SHD  
 
-- Build a liquidation bot that executes liquidations on Shade Lend. Liquidations on Shade Lend are public -- anyone can call the function to execute a liquidation. It does not cost anything except SCRT gas to execute liquidations, and you receive 10% of the profits of all liquidations as a reward for liquidation risky positions and contributing to the security and decentralization of the protocol. 
-    Milestone 1: Build a bot that executes liquidations on Shade Lend. +125 SHD
-    Milestone 2: Make the bot sell the accrued liquidation rewards for SILK. +50 SHD
+- Build a liquidation bot that executes liquidations on Shade Lend. Liquidations on Shade Lend are public -- anyone can call the function to execute a liquidation. It does not cost anything except SCRT gas to execute liquidations, and you receive 10% of the profits of all liquidations as a reward for liquidation risky positions and contributing to the security and decentralization of the protocol.   
+    Milestone 1: Build a bot that executes liquidations on Shade Lend. +125 SHD  
+    Milestone 2: Make the bot sell the accrued liquidation rewards for SILK. +50 SHD  
 
-- Build an arbitrage bot or smart contract that executes arbitrage across ShadeSwap's stablecoin pools. SILK is present in all of our pools, and there are multiple dollar stablecoins available on ShadeSwap. This means there is arbitrage to be captured when the pools are not valuing SILK equally. An arbitrage bot would identify SILK price discrepancies and purchase SILK at a cheap price in one pool, and sell it for a greater price in another pool until the prices are equalized.
-    Milestone 1: Build a bot or smart contract that executes the arbitrage described above. +125 SHD
-    Milestone 2: Build a contract that allows users to deposit SILK, and if you haven't already, convert the arbitrage bot into a smart contract that executes the arbitrage on-chain using the SILK deposited in the other smart contract. Distribute profits to depositors, and ensure all arbitrage trades are profitable. +50 SHD
-    Milestone 3: Build a front end for this application -- **this could be your own protocol!** +50 SHD
+- Build an arbitrage bot or smart contract that executes arbitrage across ShadeSwap's stablecoin pools. SILK is present in all of our pools, and there are multiple dollar stablecoins available on ShadeSwap. This means there is arbitrage to be captured when the pools are not valuing SILK equally. An arbitrage bot would identify SILK price discrepancies and purchase SILK at a cheap price in one pool, and sell it for a greater price in another pool until the prices are equalized.  
+    Milestone 1: Build a bot or smart contract that executes the arbitrage described above. +125 SHD  
+    Milestone 2: Build a contract that allows users to deposit SILK, and if you haven't already, convert the arbitrage bot into a smart contract that executes the arbitrage on-chain using the SILK deposited in the other smart contract. Distribute profits to depositors, and ensure all arbitrage trades are profitable. +50 SHD  
+    Milestone 3: Build a front end for this application -- **this could be your own protocol!** +50 SHD  
 
-- Build an arbitrage bot or smart contract that executes arbitrage between ShadeSwap's stablecoin pools and higher liquidity ETH pools (e.g. Curve, Uniswap V3, etc). This involves a Secret Network contract, a solidity contract, IBC integration, and Axelar GMP integration. This is a more involved project if you're looking for a challenge, but this will be the most profitable arbitrage by a significant margin, and also the most valuable for the protocol.
-    Milestone 1: Build a bot or smart contract that executes the arbitrage described above. +125 SHD
-    Milestone 2: Build a contract that allows users to deposit SILK, and if you haven't already, convert the arbitrage bot into a smart contract that executes the arbitrage on-chain using the SILK deposited in the other smart contract. Distribute profits to depositors, and ensure all arbitrage trades are profitable. +50 SHD
-    Milestone 3: Build a front end for this application -- **this could be your own protocol!** +50 SHD
+- Build an arbitrage bot or smart contract that executes arbitrage between ShadeSwap's stablecoin pools and higher liquidity ETH pools (e.g. Curve, Uniswap V3, etc). This involves a Secret Network contract, a solidity contract, IBC integration, and Axelar GMP integration. This is a more involved project if you're looking for a challenge, but this will be the most profitable arbitrage by a significant margin, and also the most valuable for the protocol.  
+    Milestone 1: Build a bot or smart contract that executes the arbitrage described above. +125 SHD  
+    Milestone 2: Build a contract that allows users to deposit SILK, and if you haven't already, convert the arbitrage bot into a smart contract that executes the arbitrage on-chain using the SILK deposited in the other smart contract. Distribute profits to depositors, and ensure all arbitrage trades are profitable. +50 SHD  
+    Milestone 3: Build a front end for this application -- **this could be your own protocol!** +50 SHD  
 
 ### Tier 1 Projects
 
-- Build a Yearn-style product that allows users to deposit SILK, and allows the creation of arbitrary strategies that can be plugged into the contract that utilize deposited funds to generate yield. This is the simplest Tier 1 project and involves the development of ERC-4626, ERC-5115, or other related token standards on Secret Network. Rewards must be compounded and distributed to depositors.
-    Milestone 1: Build a POC that enables the behavior described above, along with two strategies utilizing deposited SILK, such as depositing funds into the Shade Protocol Earn pool, or providing liquidity on ShadeSwap. +350 SHD
-    Milestone 2: Minimize risk to depositors by only building strategies with expected profitable outcomes, such as LPing in a stablecoin pool or Earn pool. Additionally, enable the creation of strategies that accept any input token, not just SILK. +150 SHD
-    Milestone 3: Include two configurable fees: a performance fee that takes a percentage of all generated yield, and a management fee that takes a percentage of deposited principal funds. The fees should be denominated in Annual Percent Rates (APR). +150 SHD
-    Milestone 4: Build a fully functional front end that allows users to interact with your contracts -- **this could be your own protocol!** +150 SHD
-    Milestone 5: Productize your project into a fully functional MVP that meets our grant requirements. **+9,200 SHD!** Grant requirements will be listed here when available:
+- Build a Yearn-style product that allows users to deposit SILK, and allows the creation of arbitrary strategies that can be plugged into the contract that utilize deposited funds to generate yield. This is the simplest Tier 1 project and involves the development of ERC-4626, ERC-5115, or other related token standards on Secret Network. Rewards must be compounded and distributed to depositors.  
+    Milestone 1: Build a POC that enables the behavior described above, along with two strategies utilizing deposited SILK, such as depositing funds into the Shade Protocol Earn pool, or providing liquidity on ShadeSwap. +350 SHD  
+    Milestone 2: Minimize risk to depositors by only building strategies with expected profitable outcomes, such as LPing in a stablecoin pool or Earn pool. Additionally, enable the creation of strategies that accept any input token, not just SILK. +150 SHD  
+    Milestone 3: Include two configurable fees: a performance fee that takes a percentage of all generated yield, and a management fee that takes a percentage of deposited principal funds. The fees should be denominated in Annual Percent Rates (APR). +150 SHD  
+    Milestone 4: Build a fully functional front end that allows users to interact with your contracts -- **this could be your own protocol!** +150 SHD  
+    Milestone 5: Productize your project into a fully functional MVP that meets our grant requirements. **+9,200 SHD!** Grant requirements will be listed here when available:  
 
-- Implement Trader Joe's Liquidity Book as a Secret Network contract that works with the ShadeSwap pool factory. Trader Joe Liquidity Book documentation is available here: https://docs.traderjoexyz.com/ and source code is available here under MIT license: https://github.com/traderjoe-xyz/joe-v2/. This is a protocol on Avalanche which is an EVM based blockchain, so you must be comfortable with Solidity to understand the source code but do not need to do any Solidity development.
-    Milestone 1: Build a POC that allows you to launch a pool that implements the Liquidity Book spec, complete with a rudimentary front end that allows you to manage your LP position. +350 SHD
-    Milestone 2: Implement a pool factory and router that allows you to manage the deployment of pools permissionlessly, as well as route trades through multiple pools. +150 SHD
-    Milestone 3: Productize your project into a fully functional MVP that meets our grant requirements. **+19,500 SHD!** Grant requirements will be listed here when available:
+- Implement Trader Joe's Liquidity Book as a Secret Network contract that works with the ShadeSwap pool factory. Trader Joe Liquidity Book documentation is available here: https://docs.traderjoexyz.com/ and source code is available here under MIT license: https://github.com/traderjoe-xyz/joe-v2/. This is a protocol on Avalanche which is an EVM based blockchain, so you must be comfortable with Solidity to understand the source code but do not need to do any Solidity development.  
+    Milestone 1: Build a POC that allows you to launch a pool that implements the Liquidity Book spec, complete with a rudimentary front end that allows you to manage your LP position. +350 SHD  
+    Milestone 2: Implement a pool factory and router that allows you to manage the deployment of pools permissionlessly, as well as route trades through multiple pools. +150 SHD  
+    Milestone 3: Productize your project into a fully functional MVP that meets our grant requirements. **+19,500 SHD!** Grant requirements will be listed here when available:  
