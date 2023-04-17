@@ -28,13 +28,13 @@ Our CL pools implement the Silk Swap curve, giving us control over the price ran
 
 The interfaces for our contracts is available in the ShadeSwap repo. In this document, we will summarize the system architecture.
 
-The router is where trades are executed by the users: https://github.com/securesecrets/stableswap/tree/main/contracts/router
+The router is where trades are executed by the users: https://github.com/securesecrets/shadeswap/tree/main/contracts/router
 Pools on ShadeSwap are only in pairs -- for example, stATOM/stOSMO, meaning only the tokens in that pool can be traded. However, trades can be routed between pools. For example, if there is an stATOM/stOSMO pool, and an stATOM/ATOM pool, then a user would be able to trade their stOSMO for ATOM by first swapping stOSMO for stATOM, then stATOM for ATOM. The router contract allows such trades to happen in a single transaction.
 
-The factory is where pools are created: https://github.com/securesecrets/stableswap/tree/main/contracts/factory
+The factory is where pools are created: https://github.com/securesecrets/shadeswap/tree/main/contracts/factory
 Creation of pools is permissioned. However, you could launch the contracts yourself and play with the creation of your own pools if you like. The most useful thing in the factory is the ListAMMPairs query and GetAMMPairAddress if you are looking for the list of pools that are currently available.
 
-The AMM pair contract is the heart of ShadeSwap: https://github.com/securesecrets/stableswap/tree/main/contracts/amm_pair
+The AMM pair contract is the heart of ShadeSwap: https://github.com/securesecrets/shadeswap/tree/main/contracts/amm_pair
 These contracts are the actual pools of funds that trades are executed on. If you are trying to conduct arbitrage, these are the contracts you want to use. Refer to the README in the amm_pair repo for more information.
 
 ### Liquid Staked SCRT (stkd-SCRT)
