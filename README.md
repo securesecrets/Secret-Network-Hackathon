@@ -15,10 +15,10 @@ Our whitepaper, if you're looking for even more in-depth information, is availab
 
 ### GitHub Links
 
-Main Shade Repo: https://github.com/securesecrets/shade
-Shade Oracles: https://github.com/securesecrets/shade-oracle
-Better Secret Math, gas optimized math operations for Secret Network: https://github.com/securesecrets/better-secret-math
-ShadeSwap: https://github.com/securesecrets/shadeswap
+Main Shade Repo: https://github.com/securesecrets/shade  
+Shade Oracles: https://github.com/securesecrets/shade-oracle  
+Better Secret Math, gas optimized math operations for Secret Network: https://github.com/securesecrets/better-secret-math  
+ShadeSwap: https://github.com/securesecrets/shadeswap  
 
 ### ShadeSwap
 
