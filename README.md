@@ -135,7 +135,67 @@ pub enum QueryMsg {
 
 ### Shade Lend and SILK
 
-Shade Lend is about to launch on mainnet, so depending on when you're reading this, it might not be available yet. Lend is expected to live on April 19th. This document will be updated once the contracts are public.
+Shade Lend is now live on mainnet.
+
+### Liquidations:
+
+A liquidation bot for shade lend simply queries the Vault Registry contract, which contains a list of all the available vaults on Lend. This is a paginated request:
+
+`Vaults { starting_page: Uint128 }`
+
+which returns a VaultsResponse:
+
+```
+pub struct VaultsResponse {
+    pub vaults: Vec<VaultResponse>,
+    pub page: Uint128,
+    pub total_pages: Uint128,
+    pub total_vaults: Uint128,
+}
+```
+
+You can use a `starting_page` of `1` for your first query, and check if there are more pages in the `total_pages` value in the response. If there are more pages, you can make another query for the other pages and aggregate your results.
+
+Then, you can individually query each vault for the list of risky positions:
+
+`LiquidatablePositions { vault_id: Uint128 }`
+
+Which returns a LiquidatePositionsResponse:
+
+```
+pub struct LiquidatablePositionsResponse {
+    pub positions: Vec<PositionInfo>,
+    pub vault_id: Uint128,
+}
+```
+
+A `PositionInfo` has the following structure:
+
+```
+pub struct PositionInfo {
+    pub vault_id: Uint128,
+    pub position_id: Uint128,
+    pub debt_amount: Uint256, // Will be zero for privacy reasons
+    pub collateral_amount: Uint256, // Will be zero for privacy reasons
+    pub ltv: Option<Decimal256>,
+}
+```
+
+
+If there are risky positions, this response will contain the list of risky positions in that vault:
+
+``
+
+You may then execute the `liquidate` message on the contract for that vault, which will take SILK from the Stability Pool automatically, liquidate the position, and distribute the rewards. The wallet you used to execute the `liquidate` message will receive a reward in the form of 10% of the profits from the liquidation. For example, if $10,000 of debt was liquidated with stkd-SCRT at a 10% discount and stkd-SCRT was $1, then a liquidation would force the Stability Pool to purchase $10,000 worth of stkd-SCRT at a value of $0.90, resulting in 11,111 nominal stkd-SCRT of liquidation rewards. Since the real current value of stkd-SCRT is $1 in this example, 1,111 stkd-SCRT represents the profits. You as the operator of the liquidation bot would receive 10% of this -- or 111.1 stkd-SCRT. All you have to pay is SCRT gas to execute the liquidation, but if you're not the first one to liquidate the position, then you won't receive the reward.
+
+The `liquidate` message has the following structure:
+
+```
+Liquidate {
+    vault_id: Uint128,
+    position_id: Uint128,
+}
+```
 
 ## Sponsored Projects
 
