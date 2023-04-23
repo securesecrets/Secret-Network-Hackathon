@@ -199,8 +199,9 @@ Liquidate {
 
 These messages are on the Vault Registry contracts here:
 
-Minting Closed vaults (still liquidatable): address: secret18y86hldtdp9ndj0jekcch49kwr0gwy7upe3ffw code hash: 148a525ec7bffedfc41cbc5339bf22d9e310d49b65831a269c86774fb732948c
-Current vaults: address: secret1qxk2scacpgj2mmm0af60674afl9e6qneg7yuny code hash: ac5d501827d9a337a618ca493fcbf1323b20771378774a6bf466cb66361bf021
+Minting Closed vaults (still liquidatable): `address: secret18y86hldtdp9ndj0jekcch49kwr0gwy7upe3ffw code hash: 148a525ec7bffedfc41cbc5339bf22d9e310d49b65831a269c86774fb732948c`  
+
+Current vaults: `address: secret1qxk2scacpgj2mmm0af60674afl9e6qneg7yuny code hash: ac5d501827d9a337a618ca493fcbf1323b20771378774a6bf466cb66361bf021
 
 
 ## Sponsored Projects
