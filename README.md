@@ -197,6 +197,12 @@ Liquidate {
 }
 ```
 
+These messages are on the Vault Registry contracts here:
+
+Minting Closed vaults (still liquidatable): address: secret18y86hldtdp9ndj0jekcch49kwr0gwy7upe3ffw code hash: 148a525ec7bffedfc41cbc5339bf22d9e310d49b65831a269c86774fb732948c
+Current vaults: address: secret1qxk2scacpgj2mmm0af60674afl9e6qneg7yuny code hash: ac5d501827d9a337a618ca493fcbf1323b20771378774a6bf466cb66361bf021
+
+
 ## Sponsored Projects
 
 Shade Protocol is sponsoring a number of projects with our own rewards, paid in SHD tokens. The projects are broken into two tiers -- Tier 2 projects are generally quite simple projects and are a good start if you're new to development, or you want to experiment with arbitrage trading, liquidations, and other off-chain MEV activities. Tier 1 projects are major projects tied to a significant grant. For the scope of the hackathon, MVPs will be accepted, but the full reward amount is contingent on an extended grant to fully integrate the product into the Shade Protocol application with proper testing, documentation, and auditing. These are best tackled by experienced developers or ambitious teams.
