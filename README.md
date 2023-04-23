@@ -209,8 +209,7 @@ Current vaults:
 ```
 address: secret1qxk2scacpgj2mmm0af60674afl9e6qneg7yuny 
 code hash: ac5d501827d9a337a618ca493fcbf1323b20771378774a6bf466cb66361bf021
-
-
+```
 
 ## Sponsored Projects
 
