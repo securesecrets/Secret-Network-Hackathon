@@ -37,6 +37,90 @@ Creation of pools is permissioned. However, you could launch the contracts yours
 The AMM pair contract is the heart of ShadeSwap: https://github.com/securesecrets/shadeswap/tree/main/contracts/amm_pair
 These contracts are the actual pools of funds that trades are executed on. If you are trying to conduct arbitrage, these are the contracts you want to use. Refer to the README in the amm_pair repo for more information.
 
+ShadeSwap LP contracts:
+
+```
+Constant Product:
+ 
+ 
+ 
+SHD / stkd-SCRT
+secret1qyt4l47yq3x43ezle4nwlh5q0sn6f9sesat7ap
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+SHD / stATOM
+secret1wn9tdlvut2nz0cpv28qtv74pqx20p847j8gx3w
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+SHD / JKL
+secret1uekg0c2qenz4mxwpg5j4s439rqu25p4a6wlhk6
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+SHD / BLD
+secret19964kxsa07lvz7pmujehpe6mrjfqxf73m86d3j
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+stATOM / stOSMO
+secret1y5ay9sw43rqydyyds6tuam0ugt4rxxu3cmpc79
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+SILK / stATOM
+secret14xsrnkfv5r5qh7m3csps72z9vg49tkgf7an0d5
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+SILK / stkdSCRT
+secret1a6efnz9y702pctmnzejzkjdyq0m62jypwsfk92
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+SILK / SHD
+secret1l34fyc9g23fnlk896693nw57phevnyha7pt6gj
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+SHD / SIENNA
+secret1fe22vmduz3xt53r5vxcmd567z08g3yryzck8az
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+Stable Pairs:
+ 
+ 
+ 
+SILK / IST
+secret1lrlfevkpmwc0kfxl9e59x0er5d8pzh48t68m0e
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+SILK / CMST
+secret1cqk6t9jjzqelwm0f72n5u2utvljdfgsq047cqu
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+SILK / USDC
+secret1qz57pea4k3ndmjpy6tdjcuq4tzrvjn0aphca0k
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+SILK / USDT
+secret10szrjlyza5u7yqcqvqenf28nmhwph4pad9csyw
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+Derivative Stable Curves:
+ 
+ 
+ 
+ATOM / stATOM
+secret1a65a9xgqrlsgdszqjtxhz069pgsh8h4a83hwt0
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+OSMO / stOSMO
+secret1gxqsuht45uh2tpqdpru6z6tsw3uyll6md7mzka
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+JUNO / stJUNO
+secret12wxpcquw2jx6an6da5nxyz6l7qd955u23ljcjn
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+sSCRT / stkdSCRT
+secret1y6w45fwg9ln9pxd6qys8ltjlntu9xa4f2de7sp
+e88165353d5d7e7847f2c84134c3f7871b2eee684ffac9fcf8d99a4da39dc2f2
+ 
+```
 ### Liquid Staked SCRT (stkd-SCRT)
 
 Shade Protocol's staking derivative, stkd-SCRT, allows users to earn yield from staking SCRT while still having a liquid token that can be used in DeFi. We do not have public documentation on the contract interface, but here are the most useful messages that are available on the stkd-SCRT contract, other than the standard SNIP-20 messages.
