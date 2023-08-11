@@ -217,6 +217,239 @@ pub enum QueryMsg {
 }
 ```
 
+The detailed list of messages are as follows:
+
+```
+
+/**
+* message to deposit secret in exchange for stkd-SCRT
+*/
+const msgStake = (amount: string) => ({
+msg: { stake: {} },
+transferAmount: {
+amount,
+denom: 'uscrt',
+},
+});
+
+
+/**
+* message to unbond SCRT from stkd-SCRT
+*/
+const msgUnbond = (amount:string) => ({
+unbond: {
+redeem_amount: amount,
+},
+});
+
+
+/**
+* gets the staking contract info
+*/
+const msgStakingInfo = () => {
+const time = Math.round(new Date().getTime() / 1000);
+return { staking_info: { time } };
+};
+
+
+/**
+* gets the user unbondings
+*/
+const msgUnbondings = (userAddress: string, viewingKey: string) => ({
+unbonding: { address: userAddress, key: viewingKey },
+});
+
+
+/**
+* gets the fees for staking/unbonding
+*/
+const msgFees = () => ({ fee_info: {} });
+
+```
+An Example way for secret.js to execute contract class
+
+```
+
+function msgExecuteContract({
+sourceAddress,
+contractAddress,
+contractCodeHash,
+transferAmounts,
+msg,
+}: {
+sourceAddress: string,
+contractAddress: string,
+contractCodeHash: string | undefined,
+transferAmounts?: Coin[],
+msg: any,
+}) {
+return new MsgExecuteContract({
+sender: sourceAddress,
+contract_address: contractAddress,
+code_hash: contractCodeHash,
+sent_funds: transferAmounts,
+msg,
+});
+}
+
+```
+
+Message Builders the class and definations.
+
+```
+
+* msg to deposit SCRT into the stkdScrt contract to receive stkdScrt
+*/
+function createMsgStkdScrtStake({
+sourceAddress,
+stkdScrtContractAddress,
+stkdScrtCodeHash,
+amount,
+}: {
+sourceAddress: string,
+stkdScrtContractAddress: string,
+stkdScrtCodeHash?: string,
+amount: string,
+}) {
+const { msg, transferAmount } = msgStake(amount);
+
+
+return msgExecuteContract({
+sourceAddress,
+contractAddress: stkdScrtContractAddress,
+contractCodeHash: stkdScrtCodeHash,
+transferAmounts: transferAmount !== undefined ? [transferAmount] : undefined,
+msg,
+});
+}
+
+
+/**
+* msg to deposit stkdScrt to unbond scrt
+*/
+function createMsgStkdScrtUnbond({
+sourceAddress,
+stkdScrtContractAddress,
+stkdScrtCodeHash,
+amount,
+}: {
+sourceAddress: string,
+stkdScrtContractAddress: string,
+stkdScrtCodeHash?: string,
+amount: string,
+}) {
+const msg = msgUnbond(amount);
+
+
+return msgExecuteContract({
+sourceAddress,
+contractAddress: stkdScrtContractAddress,
+contractCodeHash: stkdScrtCodeHash,
+msg,
+});
+}
+
+
+/**
+* generalized msg to claim something from a contract
+*/
+function createMsgClaim({
+sourceAddress,
+contractAddress,
+contractHash,
+}: {
+sourceAddress: string,
+contractAddress: string,
+contractHash?: string,
+}) {
+const msg = msgClaim(randomPadding());
+return msgExecuteContract({
+sourceAddress,
+contractAddress,
+contractCodeHash: contractHash,
+msg,
+});
+}
+
+```
+
+Parsers for the query responses so that you can see the response interfaces.
+
+```
+
+* parses the response for the stkd-scrt contract info
+*/
+function parseStakingDerivativesInfo(data: StakingDerivativesInfoResponse): StakingDerivativesInfo {
+const {
+staking_info: stakingInfo,
+} = data;
+const {
+price: exchangeRate,
+rewards: communityRewards,
+total_derivative_token_supply: supply,
+unbond_amount_of_next_batch: nextUnboundAmount,
+next_unbonding_batch_time: nextUnbondingBatchEstimatedTime,
+validators,
+} = stakingInfo;
+
+
+return {
+validators,
+supply: convertCoinFromUDenom(supply, 6).toNumber(),
+exchangeRate: convertCoinFromUDenom(exchangeRate, 6).toNumber(),
+communityRewards: convertCoinFromUDenom(communityRewards, 6).toNumber(),
+nextUnboundAmount: convertCoinFromUDenom(nextUnboundAmount, 6).toNumber(),
+nextUnbondingBatchEstimatedTime: convertSecondsToMilliseconds(nextUnbondingBatchEstimatedTime),
+};
+}
+
+
+/**
+* parses the response for the stkd-scrt user unbondings
+*/
+function parseStakingDerivativesUserUnbondings(
+data: StakingDerivativesUserUnbondingsResponse,
+): StakingDerivativesUserUnbondings {
+const {
+unbonding: {
+unbond_amount_in_next_batch: unbondAmountInNextBatch,
+unbondings,
+},
+} = data;
+return {
+unbondAmountInNextBatch: convertCoinFromUDenom(
+unbondAmountInNextBatch,
+6,
+).toNumber(),
+unbondings: unbondings.map(({ unbonds_at: unbondsAt, amount }) => ({
+unbondsAt: convertSecondsToMilliseconds(unbondsAt),
+amount: convertCoinFromUDenom(amount, 6).toNumber(),
+})),
+};
+}
+
+
+/**
+* parses the response for the stkd-scrt fees
+*/
+function parseStakingDerivativesFees(data: StakingDerivativesFeesResponse): StakingDerivativesFee {
+const {
+fee_info: feeInfo,
+} = data;
+
+
+const {
+deposit: depositFee,
+withdraw: withdrawFee,
+} = feeInfo;
+return {
+depositFee: Number(depositFee) / 100000,
+withdrawFee: Number(withdrawFee) / 100000,
+};
+}
+
+```
+
 ### Shade Lend and SILK
 
 Shade Lend is now live on mainnet.
